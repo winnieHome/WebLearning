@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接</title>
+</head>
+<body>
+    <h1>超链接</h1>
+    <!-- 创建超链接 -->
+    <h2>创建超链接</h2>
+    <!-- 超链接 -->
+    <a href="https://www.baidu.com">baidu</a>
+    <!-- 添加title补充信息 -->
+    <a href="https://www.google.com" title="谷歌一下">google</a>
+    <!-- 添加target， 默认_self当前页面 -->
+    <a href="https://www.baidu.com" target="_blank">baidu 打开新标签</a>
+    <!-- 图像转换为链接：使用超链接包裹图片 -->
+    <a href="https://www.google.com">
+        <img src="images/japser.webp" width="100px" alt="japser">
+    </a>
+    <!-- 指向代码片段 -->
+    <h3>指向代码片段</h3>
+    <h2 id="Mailing_address">邮寄地址</h2>
+    <a href="#Mailing_address">我们的地址（同一个页面）</a>
+    <a href="contact.html#Mailing_address">我们的地址（非同一个页面）</a>
+    <!-- 伪链接 -->
+    <h3>伪链接</h3>
+    <a href="javascript:;" onclick="alert(`Hello HTML`)">弹出弹窗</a>
+    <!-- 别的使用方式 -->
+    <h3>别的使用方式</h3>
+    <!-- 下载 -->
+    <a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=zh-CN"
+    download="firefox-latest-64bit-installer.exe">
+   下载最新的 Firefox 中文版 - Windows（64 位）
+    </a> 
+    <!-- 邮件 -->
+    <a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+        Send mail with cc, bcc, subject and body
+    </a>
+
+</body>
+</html>
