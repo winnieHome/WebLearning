@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引入方式</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }
+        div {
+            background-color: aliceblue;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>js文件引入方式</h1>
+    <h2>script引入</h2>
+    <!-- 直接引入方式 -->
+    <div id="direct-use"></div>
+    <script defer>
+        var div = document.getElementById('direct-use');
+        var node = document.createTextNode("This is direct use js code");
+        div.appendChild(node);
+        console.log("😆 --- 执行2");
+    </script>
+    <script>
+        console.log("😆 --- 执行1");
+    </script>
+    <!-- 引入外部文件 -->
+    <div id="cite-use"></div>
+    <!-- defer 仅对外部文件有效 -->
+    <script defer src="cite.js"></script>
+   
+
+    <script>
+        console.log("😆 --- 执行3");
+    </script>
+     <hr>
+    <h2>动态加载脚本</h2>
+    <div id='dynamic-cite'></div>
+    <script>
+        let script = document.createElement('script'); 
+        script.src = 'gibberish.js'; 
+        script.async = false;
+        document.head.appendChild(script);
+    </script>
+    <hr>
+    <h2>noscript</h2>
+    <noscript>
+        <p>This page requires a JavaScript-enabled browser.</p>
+    </noscript>
+</body>
+</html>

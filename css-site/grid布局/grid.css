@@ -1,0 +1,61 @@
+:root {
+    --item-odd-backColor: #C9B089;
+    --item-even-backColor: #8C8C8C;
+}
+
+.wrapper {
+    display: grid;
+    /* 使用具体px 200 */
+    /* grid-template-columns: 200px 200px 200px ; */
+    /* 使用fr */
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    /* 使用fr和具体尺寸*/
+    /* grid-template-columns: 300px 1fr 2fr ; */
+    /* 使用repeat（）设置轨道大小 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 同时使用 */
+    /* grid-template-columns: 200px repeat(2,1fr) 1fr; */
+    /* grid-auto 固定尺寸 */
+    grid-auto-rows: 150px;
+    grid-auto-rows: minmax(100px, auto);
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.item {
+    padding: 20px 0;
+    border: 1px purple solid;
+}
+
+.item:nth-child(odd) {
+    background-color: var(--item-odd-backColor);
+}
+
+.item:nth-child(even) {
+    background-color: var(--item-even-backColor);
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 4;   
+    grid-row-start: 1;
+    grid-row-end: 2;
+    /* 嵌套网格 */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 1;
+}
+
+.box2 {
+    grid-column-start: 1;
+    grid-column-end:2;
+    grid-row-start: 1;
+    grid-row-end:4;
+}
+
+.box3 {
+    /* 缩写 start-line/end-line*/
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    
+}

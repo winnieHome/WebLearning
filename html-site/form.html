@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        button::before {
+            content: "111";
+            background-color: rebeccapurple;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 400px;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li + li {
+                margin-top: 1em;
+        }
+
+        input,
+        textarea {
+        /* 确保所有文本输入框字体相同
+            textarea 默认是等宽字体 */
+        font: 1em sans-serif;
+        box-sizing: border-box;
+
+        /* 调整文本输入框的边框样式 */
+        border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+        /* 给激活的元素一点高亮效果 */
+        border-color: #000;
+        }
+
+        textarea {
+        /* 使多行文本输入框和它们的 label 正确对齐 */
+        vertical-align: top;
+
+        /* 给文本留下足够的空间 */
+        height: 5em;
+        }
+
+        .button {
+        /* 把按钮放到和文本输入框一样的位置 */
+        padding-left: 90px; /* 和 label 的大小一样 */
+        }
+
+        button {
+        /* 这个外边距的大小与 label 和文本输入框之间的间距差不多 */
+        margin-left: .5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>表单</h1>
+    <h2>first form</h2>
+    <div id="first-form">
+        <form action="https://www.baidu.com" method="post">
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" value="dddd">
+                </li>
+                <li>
+                    <label for="mail">Email:</label>
+                    <input type="email" id="mail" name="user_email">
+                </li>
+                <li>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" name="user_message">
+                        by default this element is filled with this text
+                    </textarea>
+                </li>
+                <li>
+                    <button type="submit"  
+                            autofocus
+                            formtarget="_blank"
+                            formmethod="get"
+                            name="tap"
+                            value="click">
+                            <strong>send your message</strong> 
+                    </button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <hr>
+    <h2>input 样式展示</h2>
+    <div>
+        <ul>
+            <li>
+                <input type="text" placeholder="文字输入">
+            </li>
+            <li>
+                <label for="click">点击一下</label>
+                <input type="button" name="click" value="click me" id="click">
+            </li>
+            <li>
+                <label for="number">数字：</label>
+                <input type="number" id="number">
+            </li>
+            <li>
+                <label for="pwd">密码：</label>
+                <input type="password" id="pwd" autocomplete="on">
+            </li>
+            <li>
+                <label for="mail">邮箱：</label>
+                <input type="email" id="mail" autocomplete="on">
+            </li>
+            <li>
+                <label for="tel">电话：</label>
+                <input type="tel" id="tel">
+            </li>
+            <li>
+                <label for="search">搜索：</label>
+                <input type="search" id="search">
+            </li>
+            <li>
+                <label for="month">输入年和月：</label>
+                <input type="month" id="month">
+            </li>
+            <li>
+                <label for="datetime-local">输入日期和时间：</label>
+                <input type="datetime-local" id="datetime-local">
+            </li>
+            <li>
+                <label for="time">输入时间：</label>
+                <input type="time" id="time">
+            </li>
+            <li>
+                <label for="color">颜色：</label>
+                <input type="color" id="color">
+            </li>
+            <li>
+                <label for="range">范围：</label>
+                <input type="range" id="range" min="0" max="100">
+            </li>
+            <li>
+                <label for="file">文件：</label>
+                <input type="file" id="file">
+            </li>
+            <li>
+                <label for="reset">重置（不推荐使用）：</label>
+                <input type="reset" id="reset">
+            </li>
+            <li>
+                <label for="submit">提交：</label>
+                <input type="submit" id="submit">
+            </li>
+            <li>
+                <label for="male">male</label>
+                <input type="radio" name="sex" value="male" id="male">
+                <label for="female">female</label>
+                <input type="radio" name="sex" value="female" id="female">
+            </li>
+            <li>
+                <label for="apple">apple</label>
+                <input type="checkbox" name="fruit" value="apple" id="apple">
+                <label for="banana">banana</label>
+                <input type="checkbox" name="fruit" value="banana" id="banana">
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <h2>fieldset & legend</h2>
+    <div>
+        <form action="#">
+            <fieldset name="size">
+                <legend> Fruit juice size</legend>
+                <p>
+                    <label for="size_1">small</label>
+                    <input type="radio" name="size" id="size_1" value="small">
+                </p>
+                <p>
+                    <label for="size_2">medium</label>
+                    <input type="radio" name="size" id="size_2" value="medium">  
+                </p>
+                <p>
+                    <label for="size_3">large</label>
+                    <input type="radio" name="size" id="size_3" value="large">  
+                </p>
+            </fieldset>
+        </form>
+    </div>
+    <hr>
+    <h2>构建一个表单</h2>
+    <div>
+        <form action="#" target="_blank">
+            <h3>Payment form</h3>
+            <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+            <section>
+                <h4>Contact information</h4>
+                <fieldset>
+                    <legend>Title</legend>
+                    <ul>
+                        <li>
+                            <label for="title_1">
+                              <input type="radio" id="title_1" name="title" value="K" >
+                              King
+                            </label>
+                          </li>
+                          <li>
+                            <label for="title_2">
+                              <input type="radio" id="title_2" name="title" value="Q">
+                              Queen
+                            </label>
+                          </li>
+                          <li>
+                            <label for="title_3">
+                              <input type="radio" id="title_3" name="title" value="J">
+                              Joker
+                            </label>
+                          </li>
+                    </ul>
+                </fieldset>
+                <p>
+                    <label for="name">
+                        <span>Name:</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="text" id="name" name="username">
+                </p>
+                <p>
+                    <label for="mail">
+                      <span>E-mail: </span>
+                      <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="email" id="mail" name="usermail">
+                </p>
+                <p>
+                    <label for="pwd">
+                      <span>Password: </span>
+                      <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                    <input type="password" id="pwd" name="password">
+                </p>
+            </section>
+            <section>
+                <h3>Payment information</h3>
+                <p>
+                    <label for="card">
+                      <span>Card type:</span>
+                    </label>
+                    <select id="card" name="usercard">
+                      <option value="visa">Visa</option>
+                      <option value="mc">Mastercard</option>
+                      <option value="amex">American Express</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="number">
+                      <span>Card number:</span>
+                      <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                      <input type="number" id="number" name="cardnumber">
+                </p>
+                <p>
+                    <label for="date">
+                      <span>Expiration date:</span>
+                      <strong><abbr title="required">*</abbr></strong>
+                      <em>formatted as mm/yy</em>
+                    </label>
+                    <input type="date" id="date" name="expiration">
+                </p>
+            </section>
+            <p> <button type="submit">Validate the payment</button> </p>
+        </form>
+    </div>
+</body>
+</html>
